@@ -28,8 +28,6 @@ client.commands = new Collection();
 
 client.login(client.config.token);
 
-module.export = client;
-
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
