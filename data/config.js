@@ -1,8 +1,8 @@
 module.exports = {
-    token: "OTg3MDkxNzEyMTAwOTU0MTY0.G_95iw.7gf7jrwOsrnohRKVUhS9u9lAr8f-CmAhLATpng",
+    token: "token_of_your_app",
 
-    guildId: "840770323988873227",
-    clientId: "987091712100954164",
+    guildId: "your_guild_id",
+    clientId: "id_of_your_app",
 
-    BotClose: false, // true si vous voulez que seulement vous puissiez faire les commandes
+    BotClose: false, // put true if you want only you can do the orders
 };
