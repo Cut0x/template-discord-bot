@@ -14,7 +14,7 @@ module.exports = {
         const command = interaction.client.commands.get(interaction.commandName);
     
         if (!command) {
-            console.error(`Aucune correspondance de commande ${interaction.commandName} a été trouvé.`);
+            console.error(`No order match ${interaction.commandName} was found.`);
             return;
         }
     
@@ -27,7 +27,7 @@ module.exports = {
                     embeds: [
                         new EmbedBuilder()
                             .setColor('Red')
-                            .setDescription(':x: Bot en développement, seul le développeur peut utiliser le bot !')
+                            .setDescription(':x: Bot blocked, only developer can use the bot !')
                     ],
                     ephemeral: true
                 })
@@ -41,16 +41,13 @@ module.exports = {
                 embeds: [
                     new EmbedBuilder()
                         .setColor('Red')
-                        .setDescription(`:x: Une erreur c'est produite en lancant la commande \`${interaction.commandName}\` !`)
+                        .setDescription(`:x: An error occurred while running the command \`${interaction.commandName}\` !`)
                         .addFields([
                             {
-                                name: "> Erreur :",
+                                name: "> Error :",
                                 value: "```diff\n- " + error + "```"
                             }
                         ])
-                        .setFooter({
-                            text: "Voir console pour plus d'info !"
-                        })
                 ],
                 ephemeral: true
             });
