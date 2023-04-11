@@ -19,7 +19,7 @@ module.exports = {
         }
     
         try {
-            if (BotClose == true && interaction.user.id !== "votre_identifiant") {
+            if (BotClose == true && interaction.user.id !== "your_identifiant") {
                 await interaction.deferReply({ ephemeral: true });
                 await wait(2000);
 
