@@ -1,6 +1,5 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 const wait = require('node:timers/promises').setTimeout;
-const client = require("../main");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -12,13 +11,7 @@ module.exports = {
         await wait(3000);
 		
         await interaction.editReply({
-            content: `:ping_pong: Pong !`,
-
-            embeds: [
-                new EmbedBuilder()
-                    .setColor('Random')
-                    .setDescription(`<:new:1014255730762723480> Voici ma latence: \`${mesg.createdTimestamp - interaction.createdTimestamp} ms\``)
-            ]
+            content: `:ping_pong: Pong !\n> Here is my latency: \`${mesg.createdTimestamp - interaction.createdTimestamp} ms\``
         });
 	},
 };
