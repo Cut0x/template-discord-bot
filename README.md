@@ -22,3 +22,4 @@ module.exports = {
 
 # Are you having a problem ? the code does not work ?
 Contact me by my private messages <a href="https://twitter.com/Cut0x_">Twitter</a> or <a href="https://instagram.com/valloic_">Instagram</a> with all the information (the complete error in READABLE image).
+You can also contact me through the <a href="https://github.com/Cut0x/start-discord-bot/discussions/1">message category</a> of the project !
