@@ -7,6 +7,9 @@ const { BotClose } = require("../data/config");
 
 const client = require("./main.js");
 
+const { QuickDB } = require("quick.db");
+const db = new QuickDB();
+
 module.exports = {
 	name: Events.InteractionCreate,
 	once: false,
@@ -34,7 +37,7 @@ module.exports = {
                     ephemeral: true
                 })
             } else {
-                await command.execute(interaction);
+                await command.execute(client, interaction, db);
             };
         } catch (error) {
             console.log(colors.magenta('[ERROR]') + "\n" + colors.red(error));
