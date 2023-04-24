@@ -17,12 +17,12 @@ const fs = require("node:fs"),
     path = require("node:path"),
     colors = require("colors/safe");
 
-const { DeploySlashCommands } = require("./data/dep-commands");
-DeploySlashCommands(
-    client.config.guildId,
+require("./data/dep-commands").DeploySlashCommands(
     client.config.clientId,
     client.config.token
 );
+
+module.export = client
 
 client.commands = new Collection();
 
