@@ -19,3 +19,6 @@ module.exports = {
     ownerBot: "your_id" // Your ID
 };
 ```
+
+# Are you having a problem ? the code does not work ?
+Contact me by my private messages <a href="https://twitter.com/Cut0x_">Twitter</a> or <a href="https://instagram.com/valloic_">Instagram</a> with all the information (the complete error in READABLE image).
