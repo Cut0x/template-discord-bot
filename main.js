@@ -22,7 +22,7 @@ require("./data/dep-commands").DeploySlashCommands(
     client.config.token
 );
 
-module.export = client
+module.exports = client
 
 client.commands = new Collection();
 
