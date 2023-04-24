@@ -5,6 +5,8 @@ const colors = require("colors/safe");
 
 const { BotClose } = require("../data/config");
 
+const client = require("./main.js");
+
 module.exports = {
 	name: Events.InteractionCreate,
 	once: false,
