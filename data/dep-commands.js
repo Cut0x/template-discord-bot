@@ -6,7 +6,7 @@ const fs = require("node:fs"),
     path = require("node:path"),
     colors = require("colors/safe");
 
-async function DeploySlashCommands(guildId, clientId, token) {
+async function DeploySlashCommands(clientId, token) {
     const commands = [];
     
     const commandFiless = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
