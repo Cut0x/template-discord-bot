@@ -5,7 +5,7 @@ const colors = require("colors/safe");
 
 const { BotClose } = require("../data/config");
 
-const client = require("./main.js");
+const client = require("../main.js");
 
 const { QuickDB } = require("quick.db");
 const db = new QuickDB();
