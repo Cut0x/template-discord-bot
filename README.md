@@ -1,9 +1,13 @@
 # Make a Discord bot simply !
 This template allows you to start your bot with a complete infrastructure !
 
-# Modules to install
+# Install modules
 ```
-npm install discord.js path colors fs quick.db better-sqlite3
+npm install
+```
+⚠️ The `better-sqlite3` module tends to install badly ! I therefore advise you, in case, once `npm install` is done, to do `npm install better-sqlit3`.
+```
+npm install better-sqlite3
 ```
 
 # Where to configure the bot?
