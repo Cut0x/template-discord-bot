@@ -2,7 +2,7 @@
 This template allows you to start your bot with a complete infrastructure !
 
 # Tutorial
-<iframe width="1280" height="720" src="https://www.youtube.com/watch?v=LLTMeutpcyw&t=156s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Bannière](http://img.youtube.com/vi/LLTMeutpcyw/0.jpg)](https://www.youtube.com/watch?v=LLTMeutpcyw "FR - Faire un bot #discord (v14) 🖥️")
 
 # Install modules
 ```
