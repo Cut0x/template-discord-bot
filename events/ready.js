@@ -2,9 +2,6 @@ const { Events, ActivityType, ActionRowBuilder, ButtonBuilder, ButtonStyle, Embe
 
 const colors = require("colors/safe");
 
-const { QuickDB } = require("quick.db");
-const db = new QuickDB();
-
 module.exports = {
 	name: Events.ClientReady,
 	once: true,
