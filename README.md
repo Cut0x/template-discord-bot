@@ -4,13 +4,12 @@ This template allows you to start your bot with a complete infrastructure !
 # Tutorial
 [![Bannière](http://img.youtube.com/vi/LLTMeutpcyw/0.jpg)](https://www.youtube.com/watch?v=LLTMeutpcyw "FR - Faire un bot #discord (v14) 🖥️")
 
+# Ressources
+`discord.js`, `db-json`, `path`, `fs`, `colors`
+
 # Install modules
 ```
 npm install
-```
-⚠️ The `better-sqlite3` module tends to install badly ! I therefore advise you, in case, once `npm install` is done, to do `npm install better-sqlit3`.
-```
-npm install better-sqlite3
 ```
 
 # Where to configure the bot?
