@@ -8,7 +8,7 @@ const { BotClose } = require("../data/config");
 const client = require("../main.js");
 
 const { QuickDB } = require("quick.db");
-const db = new QuickDB();
+const db = require("../db-json");
 
 module.exports = {
 	name: Events.InteractionCreate,
