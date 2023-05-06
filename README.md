@@ -5,7 +5,7 @@ This template allows you to start your bot with a complete infrastructure !
 [![Bannière](http://img.youtube.com/vi/LLTMeutpcyw/0.jpg)](https://www.youtube.com/watch?v=LLTMeutpcyw "FR - Faire un bot #discord (v14) 🖥️")
 
 # Ressources
-`discord.js`, `db-json`, `path`, `fs`, `colors`
+`discord.js`, <a href="https://github.com/Cut0x/db-json">`db-json`</a>, `path`, `fs`, `colors`
 
 # Install modules
 ```
