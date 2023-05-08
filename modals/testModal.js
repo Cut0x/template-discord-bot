@@ -7,7 +7,7 @@ module.exports = {
         return interaction.reply({
             embeds: [
                 new EmbedBuilder()
-                    .setDescription(interaction.fields.getTextInputValue('something'))
+                    .setDescription(interaction.fields.getTextInputValue('title'))
             ],
             ephemeral: true
         });
