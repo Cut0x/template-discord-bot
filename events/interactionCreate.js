@@ -57,5 +57,24 @@ module.exports = {
                 ephemeral: true
             });
         }
+
+        if (interaction.isModalSubmit()) {
+            const modal = client.modals.get(interaction.customId);
+        
+            if (!modal) return interaction.reply({
+              embeds: [
+                new EmbedBuilder()
+                  .setColor('Red')
+                  .setDescription('Something went wrong... Probably the Modal ID is not defined in the modals handler.')
+              ],
+              ephemeral: true
+            });
+        
+            try {
+              modal.run(client, interaction);
+            } catch (e) {
+              console.error(e)
+            };
+        }
 	},
 };
