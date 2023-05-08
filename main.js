@@ -54,3 +54,16 @@ for (const file of commandFiles) {
         console.log(colors.yellow('[WARNING]') + " " + colors.magenta(`The command ar ${filePath} is missing a required "data" or "execute" proprety.`));
     };
 };
+
+const modals = fs.readdirSync(`./modals/`).filter(file => file.endsWith('.js'));
+
+for (let file of modals) {
+    let pull = require(`./modals/${file}`);
+    if (pull.id) {
+        client.modals.set(pull.id, pull);
+        console.log(colors.green('[SUCCES]') + " " + `Loaded a ${file} file !`)
+    } else {
+        console.log(colors.yellow('[WARNING]') + " " + `Couldn't load a ${file} file !`)
+        continue;
+    }
+}
