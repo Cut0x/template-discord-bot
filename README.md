@@ -5,7 +5,7 @@ This template allows you to start your bot with a complete infrastructure !
 [![Bannière](http://img.youtube.com/vi/LLTMeutpcyw/0.jpg)](https://www.youtube.com/watch?v=LLTMeutpcyw "FR - Faire un bot #discord (v14) 🖥️")
 
 # Ressources
-<a href="https://discord.js.org/#/docs/discord.js/main/general/welcome">`discord.js`</a>, <a href="https://github.com/Cut0x/db-json">`db-json`</a>, `path`, `fs`, `colors`
+<a href="https://discord.js.org/#/docs/discord.js/main/general/welcome">`discord.js`</a>, `path`, `fs`, `colors`
 
 # Install modules
 ```
@@ -27,5 +27,5 @@ module.exports = {
 ```
 
 # Are you having a problem ? the code does not work ?
-Contact me by my private messages <a href="https://twitter.com/Cut0x_">Twitter</a> or <a href="https://instagram.com/valloic_">Instagram</a> with all the information (the complete error in READABLE image).
-You can also contact me through the ~~<a href="https://github.com/Cut0x/start-discord-bot/discussions/1">message category</a>~~ of the project !
+Contact me by my private messages <a href="https://twitter.com/cut0x_">Twitter</a> or <a href="https://instagram.com/valloic_">Instagram</a> with all the information (the complete error in READABLE image).
+You can also contact me through the <a href="https://github.com/Cut0x/start-discord-bot/discussions/1">message category</a> of the project !

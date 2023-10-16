@@ -7,8 +7,6 @@ const { BotClose } = require("../data/config");
 
 const client = require("../main.js");
 
-const db = require("../db-json");
-
 module.exports = {
 	name: Events.InteractionCreate,
 	once: false,
