@@ -2,7 +2,7 @@
 This template allows you to start your bot with a complete infrastructure !
 
 # Tutorial
-***Vidéo plus à jour avec le nouveau code !***<br>
+***More up to date video with the new code!***<br>
 [![Bannière](http://img.youtube.com/vi/LLTMeutpcyw/0.jpg)](https://www.youtube.com/watch?v=LLTMeutpcyw "FR - Faire un bot #discord (v14) 🖥️")
 
 # Ressources
