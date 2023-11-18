@@ -1,77 +1,30 @@
-const { Events, EmbedBuilder } = require('discord.js');
-const wait = require('node:timers/promises').setTimeout;
+const { BotEvent } = require('simple-djs-handler');
+const { Events } = require('discord.js');
 
-const colors = require("colors/safe");
+const { bot } = require("../data/config");
 
-const { BotClose } = require("../data/config");
-
-const client = require("../main.js");
-
-module.exports = {
-	name: Events.InteractionCreate,
-	once: false,
-	async execute(interaction) {
+module.exports = new BotEvent({
+    name: Events.InteractionCreate,
+    async execute(interaction) {
         if (!interaction.isChatInputCommand()) return;
 
         const command = interaction.client.commands.get(interaction.commandName);
     
         if (!command) {
-            console.error(`No order match ${interaction.commandName} was found.`);
+            console.log(`No order match ${interaction.commandName} was found.`)
             return;
-        }
+        };
     
         try {
-            if (BotClose == true && interaction.user.id !== client.config.ownerBot) {
-                await interaction.deferReply({ ephemeral: true });
-                await wait(2000);
-
-                await interaction.editReply({
-                    embeds: [
-                        new EmbedBuilder()
-                            .setColor('Red')
-                            .setDescription(':x: Bot blocked, only developer can use the bot !')
-                    ],
-                    ephemeral: true
-                })
+            if (bot.maintenance === true && interaction !== bot.owner_bot) {
+                interaction.reply({
+                    content: ":x: Only the bot owner can use the bot."
+                });
             } else {
-                await command.execute(client, interaction, db);
+                await command.execute(interaction);
             };
         } catch (error) {
-            console.log(colors.magenta('[ERROR]') + "\n" + colors.red(error));
-
-            await interaction.editReply({
-                embeds: [
-                    new EmbedBuilder()
-                        .setColor('Red')
-                        .setDescription(`:x: An error occurred while running the command \`${interaction.commandName}\` !`)
-                        .addFields([
-                            {
-                                name: "> Error :",
-                                value: "```diff\n- " + error + "```"
-                            }
-                        ])
-                ],
-                ephemeral: true
-            });
-        }
-
-        if (interaction.isModalSubmit()) {
-            const modal = client.modals.get(interaction.customId);
-        
-            if (!modal) return interaction.reply({
-              embeds: [
-                new EmbedBuilder()
-                  .setColor('Red')
-                  .setDescription('Something went wrong... Probably the Modal ID is not defined in the modals handler.')
-              ],
-              ephemeral: true
-            });
-        
-            try {
-              modal.run(client, interaction);
-            } catch (e) {
-              console.error(e)
-            };
-        }
-	},
-};
+            console.log(`Error when launching an command : ${error}`);
+        };
+    },
+});

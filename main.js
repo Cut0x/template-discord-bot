@@ -1,56 +1,17 @@
-const { Client, Events, GatewayIntentBits, Collection } = require("discord.js");
+const { BotClient } = require('simple-djs-handler');
+const { GatewayIntentBits } = require('discord.js');
 
-const client = new Client({
+const config = require("./data/config");
+
+const client = new BotClient({
+    token: config.bot.token,
+    slashCommandsEnabled: true,
+    slashCommandsClientId: config.bot.client_id,
     intents: [
-        GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildMessages,
         GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.MessageContent
-    ]
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages
+    ],
 });
 
-client.config = require("./data/config");
-
-const fs = require("node:fs"),
-    path = require("node:path"),
-    colors = require("colors/safe");
-
-require("./data/dep-commands").DeploySlashCommands(
-    client.config.clientId,
-    client.config.token
-);
-
-module.exports = client
-
-client.commands = new Collection();
-
-client.login(client.config.token);
-
-const eventsPath = path.join(__dirname, 'events');
-const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
-
-for (const file of eventFiles) {
-    const filePath = path.join(eventsPath, file);
-    const event = require(filePath);
-    if (event.once) {
-	    client.once(event.name, (...args) => event.execute(...args));
-    } else {
-	    client.on(event.name, (...args) => event.execute(...args));
-    };
-};
-
-const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-    const filePath = path.join(commandsPath, file);
-    const command = require(filePath);
-
-    if ('data' in command && 'execute' in command) {
-        client.commands.set(command.data.name, command);
-    } else {
-        console.log(colors.yellow('[WARNING]') + " " + colors.magenta(`The command ar ${filePath} is missing a required "data" or "execute" proprety.`));
-    };
-};
+client.start();

@@ -1,11 +1,10 @@
-const { Events, ActivityType, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('discord.js');
+const { BotEvent } = require('simple-djs-handler');
+const { Events } = require('discord.js');
 
-const colors = require("colors/safe");
-
-module.exports = {
-	name: Events.ClientReady,
-	once: true,
-	async execute(c) {
-        console.log(colors.blue('[INFO]') + " " + colors.red(`Log In on ${c.user.username} !`));
+module.exports = new BotEvent({
+    name: Events.ClientReady,
+    once: true,
+    execute(client) {        
+        client.user.setActivity('i\'m online !')
     },
-};
+});
