@@ -9,7 +9,7 @@ This template allows you to start your bot with a complete infrastructure !
 <a href="https://www.npmjs.com/package/simple-djs-handler">simple-djs-handler</a>, <a href="https://www.npmjs.com/package/discord.js">discord.js</a>, <a href="https://www.npmjs.com/package/path">path</a>, <a href="#">fs</a>
 
 # Install modules
-```
+```bash
 npm install
 ```
 
@@ -24,6 +24,12 @@ module.exports = {
         maintenance: false // put true if you want only you can do the orders
     }
 };
+```
+
+# How start the bot ?
+All you have to do is type the following code into the terminal
+```bash
+node main
 ```
 
 # Are you having a problem ? the code does not work ?
